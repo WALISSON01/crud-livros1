@@ -70,8 +70,6 @@ app.put('/livros/:id', async (req, res) => {
         res.status(400).json({ message: err.message });
     }
 });
-
-
 app.delete('/livros/:id', async (req, res) => {
     try {
         const livro = await Livro.findByIdAndDelete(req.params.id);
@@ -81,7 +79,5 @@ app.delete('/livros/:id', async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
-
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
